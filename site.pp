@@ -2,21 +2,21 @@
 # A very simple puppet configuration.
 #
 
-# first, import all our classes loaded in the classes folder
+# First, import all our classes loaded in the classes folder
 import "classes/*.pp"
 
-# now define the defauls for all nodes
+# Now define the defaults for all nodes
 
 node default {
 
-	# we want roadrunner to be have an account
+	# We want roadrunner to be have an account
 
 	add_user { rrunner:
                 email    => "road.runner@acme.com",
                 uid      => 5001
         }
 
-	# and we want roadrunner to be able to login via ssh keys
+	# And we want roadrunner to be able to login via ssh keys
 	#  CAREFUL: We don't Wiley E Coyote to gain access to the private key
 	# or it will be GAME OVER
 
@@ -25,7 +25,7 @@ node default {
                 type    => "ssh-rsa"
         }
 
-	# we can add other classes, rules and other information we want all our nodes
+	# We can add other classes, rules and other information we want all our nodes
 	# to get here. But for now, this is enough so end the node statement.
 
 }
